@@ -211,8 +211,14 @@ p {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.logo-icon {
-  color: var(--color-secondary);
+.brand-logo {
+  height: 44px;
+  width: auto;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar.scrolled .brand-logo {
+  height: 32px;
 }
 
 .nav-links {
