@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Quality - HydraPure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="water_quality.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+          <div class="logo-text">
+            <span class="brand-name">HydraPure</span>
+            <span class="brand-tagline">PURE WATER, PURE LIFE</span>
+          </div>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <i data-lucide="home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="water_stations.html" class="nav-item">
+          <i data-lucide="map-pin"></i>
+          <span>Water Stations</span>
+        </a>
+        <a href="water_quality.html" class="nav-item active">
+          <i data-lucide="droplet"></i>
+          <span>Water Quality</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="triangle-alert"></i>
+          <span>Alerts</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="file-text"></i>
+          <span>Reports</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="map"></i>
+          <span>Map</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="illustration-wrapper">
+          <img src="assets/images/sidebar_illustration.jpg" alt="Mountain illustration">
+        </div>
+        <div class="footer-text">
+          <span>Clean Water</span>
+          <span>Stronger Communities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" placeholder="Search station, village or district...">
+        </div>
+        <div class="header-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">AY</div>
+            <div class="user-info">
+              <span class="user-name">Alok Yadav</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="water-quality-body">
+        
+        <!-- Page Header -->
+        <div class="page-header-container">
+          <div class="header-left">
+            <span class="eyebrow">WATER QUALITY MONITORING</span>
+            <h1 class="main-title">Water Quality</h1>
+            <p class="subtitle">Real-time water quality data from all stations across Jharkhand.</p>
+          </div>
+          <div class="header-right-actions">
+            <div class="last-updated">
+              <span class="update-label">Tue, 2 Sep 2026</span>
+              <span class="update-time">10:24 AM</span>
+              <span class="online-status"><span class="dot green"></span> System Online</span>
+            </div>
+            <button class="btn-download">
+              <i data-lucide="download"></i> Download Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Grid for 12 Column Layout -->
+        <div class="main-grid">
+          
+          <!-- Row 1: Top 5 Stats -->
+          <div class="stats-row">
+            <!-- pH -->
+            <div class="stat-card card-component">
+              <div class="stat-icon-wrapper"><i data-lucide="droplet"></i></div>
+              <div class="stat-content">
+                <div class="stat-label">Avg pH</div>
+                <div class="stat-val">7.1</div>
+                <div class="stat-status">(Good) <span class="dot green"></span></div>
+              </div>
+            </div>
+            <!-- TDS -->
+            <div class="stat-card card-component">
+              <div class="stat-icon-wrapper"><i data-lucide="waves"></i></div>
+              <div class="stat-content">
+                <div class="stat-label">Avg TDS</div>
+                <div class="stat-val">420 ppm</div>
+                <div class="stat-status">(Moderate) <span class="dot yellow"></span></div>
+              </div>
+            </div>
+            <!-- Turbidity -->
+            <div class="stat-card card-component">
+              <div class="stat-icon-wrapper"><i data-lucide="grid-3x3"></i></div>
+              <div class="stat-content">
+                <div class="stat-label">Avg Turbidity</div>
+                <div class="stat-val">1.8 NTU</div>
+                <div class="stat-status">(Good) <span class="dot green"></span></div>
+              </div>
+            </div>
+            <!-- Temp -->
+            <div class="stat-card card-component">
+              <div class="stat-icon-wrapper"><i data-lucide="thermometer"></i></div>
+              <div class="stat-content">
+                <div class="stat-label">Avg Temperature</div>
+                <div class="stat-val">25.2 &deg;C</div>
+                <div class="stat-status">(Normal) <span class="dot green"></span></div>
+              </div>
+            </div>
+            <!-- Chlorine -->
+            <div class="stat-card card-component">
+              <div class="stat-icon-wrapper"><i data-lucide="flask-conical"></i></div>
+              <div class="stat-content">
+                <div class="stat-label">Residual Chlorine</div>
+                <div class="stat-val">0.4 mg/L</div>
+                <div class="stat-status">(Adequate) <span class="dot green"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Map, Chart, Standards -->
+          <!-- Map -->
+          <div class="map-card card-component">
+            <div class="card-header">
+              <h2>Water Quality Status (Jharkhand)</h2>
+              <div class="dropdown-control">
+                <span>All Districts</span> <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+            <div class="map-inner">
+              <img src="assets/images/jharkhand_map.jpg" alt="Jharkhand Map" class="map-bg">
+              <div class="map-labels">
+                <span style="top: 25%; left: 15%;">Palamu</span>
+                <span style="top: 55%; left: 15%;">Latehar</span>
+                <span style="top: 70%; left: 25%;">Lohardaga</span>
+                <span style="top: 85%; left: 25%;">Gumla</span>
+                
+                <span style="top: 15%; left: 60%;">Hazaribagh</span>
+                <span style="top: 35%; left: 65%;">Dhanbad</span>
+                <span style="top: 60%; left: 60%;">Ranchi</span>
+                <span style="top: 75%; left: 75%;">Saraikela</span>
+
+                <!-- Markers -->
+                <div class="dot green marker" style="top: 35%; left: 25%;"></div>
+                <div class="dot red marker" style="top: 40%; left: 35%;"></div>
+                <div class="dot green marker" style="top: 35%; left: 50%;"></div>
+                <div class="dot green marker" style="top: 40%; left: 60%;"></div>
+                
+                <div class="dot green marker" style="top: 55%; left: 35%;"></div>
+                <div class="dot yellow marker" style="top: 65%; left: 40%;"></div>
+                <div class="dot green marker" style="top: 50%; left: 55%;"></div>
+                
+                <div class="dot red marker" style="top: 80%; left: 45%;"></div>
+                <div class="dot green marker" style="top: 70%; left: 65%;"></div>
+              </div>
+            </div>
+            <div class="map-footer">
+              <div class="legend-item"><span class="dot green"></span> Good</div>
+              <div class="legend-item"><span class="dot yellow"></span> Caution</div>
+              <div class="legend-item"><span class="dot red"></span> Poor</div>
+            </div>
+          </div>
+
+          <!-- Trends Chart -->
+          <div class="trends-card card-component">
+            <div class="card-header">
+              <h2>Water Quality Trends (All Stations)</h2>
+              <div class="dropdown-control">
+                <span>Last 7 Days</span> <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+            <div class="tabs">
+              <div class="tab active">pH</div>
+              <div class="tab">TDS</div>
+              <div class="tab">Turbidity</div>
+              <div class="tab">Temperature</div>
+              <div class="tab">Chlorine</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="qualityChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Standards -->
+          <div class="standards-card card-component">
+            <div class="card-header">
+              <h2>Water Quality Standards <i data-lucide="info" class="info-icon"></i></h2>
+            </div>
+            <div class="standards-table-wrapper">
+              <table class="standards-table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Acceptable Range</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>pH</td><td>6.5 &ndash; 8.5</td></tr>
+                  <tr><td>TDS</td><td>&lt; 500 ppm</td></tr>
+                  <tr><td>Turbidity</td><td>&lt; 5 NTU</td></tr>
+                  <tr><td>Temperature</td><td>10 &ndash; 35 &deg;C</td></tr>
+                  <tr><td>Residual Chlorine</td><td>0.2 &ndash; 1.0 mg/L</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="standards-note">
+              Note: Ranges are general drinking water guidelines (as per BIS/WHO).
+            </div>
+          </div>
+
+          <!-- Row 3: Table, Alerts, Insight -->
+          <!-- Large Table -->
+          <div class="table-card card-component">
+            <div class="card-header">
+              <h2>Station-wise Water Quality</h2>
+              <div class="table-controls">
+                <div class="search-input">
+                  <i data-lucide="search"></i>
+                  <input type="text" placeholder="Search station...">
+                </div>
+                <div class="dropdown-control">
+                  <span>All Districts</span> <i data-lucide="chevron-down"></i>
+                </div>
+                <div class="dropdown-control">
+                  <span>All Statuses</span> <i data-lucide="chevron-down"></i>
+                </div>
+                <button class="btn-export">
+                  <i data-lucide="download"></i> Export
+                </button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Station / Village</th>
+                    <th>District</th>
+                    <th>pH</th>
+                    <th>TDS<br>(ppm)</th>
+                    <th>Turbidity<br>(NTU)</th>
+                    <th>Temperature<br>(&deg;C)</th>
+                    <th>Chlorine<br>(mg/L)</th>
+                    <th>Status</th>
+                    <th>Last Update</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Jharia</td><td>Dhanbad</td><td>7.2</td><td>310</td><td>1.2</td><td>24.8</td><td>0.5</td><td><span class="status-pill green"><span class="dot"></span> Good</span></td><td>10:22 AM</td><td><a href="#">View</a></td></tr>
+                  <tr><td>2</td><td>Govindpur</td><td>Dhanbad</td><td>7.5</td><td>620</td><td>3.1</td><td>25.4</td><td>0.3</td><td><span class="status-pill yellow"><span class="dot"></span> Caution</span></td><td>10:20 AM</td><td><a href="#">View</a></td></tr>
+                  <tr><td>3</td><td>Baghmara</td><td>Dhanbad</td><td>5.9</td><td>1500</td><td>12.4</td><td>26.1</td><td>0.1</td><td><span class="status-pill red"><span class="dot"></span> Poor</span></td><td>10:15 AM</td><td><a href="#">View</a></td></tr>
+                  <tr><td>4</td><td>Katras</td><td>Dhanbad</td><td>6.8</td><td>820</td><td>4.5</td><td>25.0</td><td>0.4</td><td><span class="status-pill yellow"><span class="dot"></span> Caution</span></td><td>10:18 AM</td><td><a href="#">View</a></td></tr>
+                  <tr><td>5</td><td>Nirsa</td><td>Dhanbad</td><td>7.1</td><td>320</td><td>1.1</td><td>24.9</td><td>0.6</td><td><span class="status-pill green"><span class="dot"></span> Good</span></td><td>10:19 AM</td><td><a href="#">View</a></td></tr>
+                  <tr><td>6</td><td>Sindri</td><td>Dhanbad</td><td>7.0</td><td>450</td><td>2.8</td><td>25.5</td><td>0.3</td><td><span class="status-pill green"><span class="dot"></span> Good</span></td><td>10:17 AM</td><td><a href="#">View</a></td></tr>
+                  <tr><td>7</td><td>Topchanchi</td><td>Dhanbad</td><td>7.4</td><td>280</td><td>0.9</td><td>24.7</td><td>0.5</td><td><span class="status-pill green"><span class="dot"></span> Good</span></td><td>10:16 AM</td><td><a href="#">View</a></td></tr>
+                  <tr><td>8</td><td>Baliapur</td><td>Dhanbad</td><td>6.1</td><td>980</td><td>6.2</td><td>25.8</td><td>0.2</td><td><span class="status-pill red"><span class="dot"></span> Poor</span></td><td>10:14 AM</td><td><a href="#">View</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Alerts & Insight Container -->
+          <div class="alerts-insight-container">
+            <!-- Alerts -->
+            <div class="alerts-card card-component">
+              <div class="card-header">
+                <h2>Recent Water Quality Alerts</h2>
+                <a href="#" class="view-all-link">View All &rarr;</a>
+              </div>
+              <div class="alerts-list">
+                <div class="alert-item">
+                  <div class="alert-icon"><span class="dot red large"></span></div>
+                  <div class="alert-content">
+                    <div class="alert-title">High TDS detected (1500 ppm)</div>
+                    <div class="alert-desc">Baghmara &ndash; Station 03</div>
+                  </div>
+                  <div class="alert-time">10:15 AM</div>
+                </div>
+                <div class="alert-item">
+                  <div class="alert-icon"><span class="dot yellow large"></span></div>
+                  <div class="alert-content">
+                    <div class="alert-title">Turbidity above limit (6.2 NTU)</div>
+                    <div class="alert-desc">Katras &ndash; Station 04</div>
+                  </div>
+                  <div class="alert-time">09:42 AM</div>
+                </div>
+                <div class="alert-item">
+                  <div class="alert-icon"><span class="dot yellow large"></span></div>
+                  <div class="alert-content">
+                    <div class="alert-title">Low pH detected (5.9)</div>
+                    <div class="alert-desc">Sindri &ndash; Station 05</div>
+                  </div>
+                  <div class="alert-time">07:18 AM</div>
+                </div>
+                <div class="alert-item">
+                  <div class="alert-icon"><span class="dot red large"></span></div>
+                  <div class="alert-content">
+                    <div class="alert-title">Residual chlorine low (0.1 mg/L)</div>
+                    <div class="alert-desc">Lodna &ndash; Station 06</div>
+                  </div>
+                  <div class="alert-time">06:55 AM</div>
+                </div>
+                <div class="alert-item">
+                  <div class="alert-icon"><span class="dot info large"></span></div>
+                  <div class="alert-content">
+                    <div class="alert-title">Parameters back to normal</div>
+                    <div class="alert-desc">Govindpur &ndash; Station 02</div>
+                  </div>
+                  <div class="alert-time">06:20 AM</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Insight -->
+            <div class="insight-card card-component">
+              <div class="insight-header">
+                <div class="insight-title"><i data-lucide="lightbulb"></i> AI Insight</div>
+                <span class="badge-beta">Beta</span>
+              </div>
+              <div class="insight-content">
+                <p>TDS levels in Dhanbad district have shown a 18% increase in the last 7 days. Recommended: Check pre-treatment filters and source variation.</p>
+                <i data-lucide="chevron-right"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="water_quality.js"></script>
+</body>
+</html>
