@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Stations - HydraPure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="water_stations.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+          <div class="logo-text">
+            <span class="brand-name">HydraPure</span>
+            <span class="brand-tagline">PURE WATER, PURE LIFE</span>
+          </div>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <i data-lucide="home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="water_stations.html" class="nav-item active">
+          <i data-lucide="map-pin"></i>
+          <span>Water Stations</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="droplet"></i>
+          <span>Water Quality</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="triangle-alert"></i>
+          <span>Alerts</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="file-text"></i>
+          <span>Reports</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="map"></i>
+          <span>Map</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="illustration-wrapper">
+          <img src="assets/images/sidebar_illustration.jpg" alt="Mountain illustration">
+        </div>
+        <div class="footer-text">
+          <span>Clean Water</span>
+          <span>Stronger Communities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" placeholder="Search station, village or district...">
+        </div>
+        <div class="header-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">AY</div>
+            <div class="user-info">
+              <span class="user-name">Alok Yadav</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="water-stations-body">
+        
+        <!-- Page Header -->
+        <div class="page-header-container">
+          <div class="header-left">
+            <div class="breadcrumbs">
+              <span>Water Stations</span> <i data-lucide="chevron-right"></i> <span>Jharia</span>
+            </div>
+            <div class="title-row">
+              <h1 class="main-title">Jharia Water Station</h1>
+              <div class="status-pill operational">
+                <span class="dot"></span> Operational <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+            <div class="location-row">
+              <i data-lucide="map-pin"></i> <span>Jharia, Dhanbad District, Jharkhand</span>
+              <span class="separator">|</span>
+              <span>Station ID: WS-001</span>
+            </div>
+          </div>
+          <div class="header-right-actions">
+            <div class="last-updated">
+              <span class="update-label">Last Updated</span>
+              <span class="update-time">02 Sep 2026, 10:22 AM</span>
+              <span class="online-status"><span class="dot green"></span> Online (4G)</span>
+            </div>
+            <button class="btn-actions">
+              Actions <i data-lucide="chevron-down"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Grid for 7 Sections -->
+        <div class="main-grid">
+          
+          <!-- Station Image -->
+          <div class="station-image-card card-component">
+            <img src="assets/images/station_photo.jpg" alt="Jharia Water Station">
+          </div>
+
+          <!-- Live Water Quality -->
+          <div class="water-quality-card card-component">
+            <div class="card-header">
+              <h2>Live Water Quality <i data-lucide="info" class="info-icon"></i></h2>
+              <span class="updated-text">Updated: 10:22 AM</span>
+            </div>
+            <div class="quality-grid">
+              <!-- pH -->
+              <div class="quality-item">
+                <div class="q-icon"><i data-lucide="droplet"></i></div>
+                <div class="q-content">
+                  <div class="q-label">pH</div>
+                  <div class="q-val">7.2</div>
+                  <div class="q-range">(6.5 &ndash; 8.5)</div>
+                  <div class="q-status"><span class="dot green"></span> Normal</div>
+                </div>
+              </div>
+              <!-- TDS -->
+              <div class="quality-item">
+                <div class="q-icon"><i data-lucide="waves"></i></div>
+                <div class="q-content">
+                  <div class="q-label">TDS</div>
+                  <div class="q-val">310 ppm</div>
+                  <div class="q-range">(&lt; 500)</div>
+                  <div class="q-status"><span class="dot green"></span> Normal</div>
+                </div>
+              </div>
+              <!-- Turbidity -->
+              <div class="quality-item">
+                <div class="q-icon"><i data-lucide="grid-3x3"></i></div>
+                <div class="q-content">
+                  <div class="q-label">Turbidity</div>
+                  <div class="q-val">1.2 NTU</div>
+                  <div class="q-range">(&lt; 5)</div>
+                  <div class="q-status"><span class="dot green"></span> Normal</div>
+                </div>
+              </div>
+              <!-- Temperature -->
+              <div class="quality-item">
+                <div class="q-icon"><i data-lucide="thermometer"></i></div>
+                <div class="q-content">
+                  <div class="q-label">Temperature</div>
+                  <div class="q-val">24.8 &deg;C</div>
+                  <div class="q-range">(15 &ndash; 35)</div>
+                  <div class="q-status"><span class="dot green"></span> Normal</div>
+                </div>
+              </div>
+              <!-- Flow Rate -->
+              <div class="quality-item">
+                <div class="q-icon"><i data-lucide="refresh-cw"></i></div>
+                <div class="q-content">
+                  <div class="q-label">Flow Rate</div>
+                  <div class="q-val">12.5 L/min</div>
+                  <div class="q-range">(&gt; 5)</div>
+                  <div class="q-status"><span class="dot green"></span> Normal</div>
+                </div>
+              </div>
+              <!-- Residual Chlorine -->
+              <div class="quality-item">
+                <div class="q-icon"><i data-lucide="flask-conical"></i></div>
+                <div class="q-content">
+                  <div class="q-label">Residual Chlorine</div>
+                  <div class="q-val">0.5 mg/L</div>
+                  <div class="q-range">(0.2 &ndash; 1.0)</div>
+                  <div class="q-status"><span class="dot green"></span> Normal</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Station Location Map -->
+          <div class="location-map-card card-component">
+            <div class="card-header">
+              <h2>Station Location</h2>
+            </div>
+            <div class="map-inner">
+              <div class="map-controls">
+                <button><i data-lucide="plus"></i></button>
+                <button><i data-lucide="minus"></i></button>
+              </div>
+              <img src="assets/images/location_map.jpg" alt="Map" class="map-bg">
+              <div class="map-labels">
+                <span style="top: 20%; left: 45%;">Bastacola</span>
+                <span style="top: 45%; left: 20%;">Lodna</span>
+                <span style="top: 55%; left: 75%;">Kusunda</span>
+                <span style="top: 80%; left: 80%;">Dhanbad</span>
+                <div class="map-pin" style="top: 50%; left: 50%;">
+                  <i data-lucide="map-pin"></i>
+                  <span>Jharia</span>
+                </div>
+              </div>
+            </div>
+            <div class="map-footer">
+              Latitude: 23.7956&deg; N <span class="sep">|</span> Longitude: 86.4304&deg; E
+            </div>
+          </div>
+
+          <!-- Treatment System Status -->
+          <div class="treatment-system-card card-component">
+            <div class="card-header">
+              <h2>Treatment System Status</h2>
+            </div>
+            <div class="treatment-flow">
+              <!-- Step 1 -->
+              <div class="t-step">
+                <div class="t-icon"><i data-lucide="waves"></i></div>
+                <div class="t-name">Raw Water<br>(Inlet)</div>
+                <div class="t-status green-light">Normal</div>
+              </div>
+              <div class="t-arrow"><i data-lucide="arrow-right"></i></div>
+              <!-- Step 2 -->
+              <div class="t-step">
+                <div class="t-icon"><i data-lucide="align-justify"></i></div>
+                <div class="t-name">Sediment<br>Filter</div>
+                <div class="t-status green-light">Running</div>
+              </div>
+              <div class="t-arrow"><i data-lucide="arrow-right"></i></div>
+              <!-- Step 3 -->
+              <div class="t-step">
+                <div class="t-icon"><i data-lucide="grip-vertical"></i></div>
+                <div class="t-name">Iron Removal<br>(Unit)</div>
+                <div class="t-status green-light">Running</div>
+              </div>
+              <div class="t-arrow"><i data-lucide="arrow-right"></i></div>
+              <!-- Step 4 -->
+              <div class="t-step">
+                <div class="t-icon"><i data-lucide="sun"></i></div>
+                <div class="t-name">UV<br>Disinfection</div>
+                <div class="t-status green-light">Running</div>
+              </div>
+              <div class="t-arrow"><i data-lucide="arrow-right"></i></div>
+              <!-- Step 5 -->
+              <div class="t-step">
+                <div class="t-icon"><i data-lucide="droplet"></i></div>
+                <div class="t-name">Treated Water<br>(Output)</div>
+                <div class="t-status green-light">Good</div>
+              </div>
+            </div>
+            <div class="t-footer">
+              <i data-lucide="info"></i> Meeting Standards
+            </div>
+          </div>
+
+          <!-- Supply Status -->
+          <div class="supply-status-card card-component">
+            <div class="card-header">
+              <h2>Supply Status</h2>
+            </div>
+            <div class="supply-content">
+              <div class="supply-highlight">
+                <div class="h-icon"><i data-lucide="droplets"></i></div>
+                <div class="h-text">
+                  <h3>Supplying Water</h3>
+                  <p>Water is safe and being supplied<br>to village storage tank.</p>
+                </div>
+              </div>
+              <div class="supply-stats">
+                <div class="s-row">
+                  <div class="s-label"><i data-lucide="git-merge"></i> To Village Tank</div>
+                  <div class="s-val">12.5 L/min</div>
+                </div>
+                <div class="s-row">
+                  <div class="s-label"><i data-lucide="home"></i> Households Covered</div>
+                  <div class="s-val">~ 300</div>
+                </div>
+                <div class="s-row">
+                  <div class="s-label"><i data-lucide="clock"></i> Supply Since</div>
+                  <div class="s-val">06:18 AM (4h 04m)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Alerts -->
+          <div class="alerts-card card-component">
+            <div class="card-header">
+              <h2>Recent Alerts</h2>
+              <a href="#" class="view-all-link">View All &rarr;</a>
+            </div>
+            <div class="table-responsive">
+              <table class="alerts-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Level</th>
+                    <th>Message</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>28 Aug, 09:42 AM</td>
+                    <td><span class="dot yellow"></span> Warning</td>
+                    <td>Turbidity above limit (6.2 NTU) &ndash; auto corrected</td>
+                  </tr>
+                  <tr>
+                    <td>25 Aug, 06:15 PM</td>
+                    <td><span class="dot gray"></span> Info</td>
+                    <td>Scheduled maintenance completed</td>
+                  </tr>
+                  <tr>
+                    <td>21 Aug, 11:20 AM</td>
+                    <td><span class="dot red"></span> Critical</td>
+                    <td>High TDS detected (820 ppm) &ndash; supply blocked</td>
+                  </tr>
+                  <tr>
+                    <td>18 Aug, 08:05 AM</td>
+                    <td><span class="dot gray"></span> Info</td>
+                    <td>System back online</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Parameter Trends -->
+          <div class="trends-card card-component">
+            <div class="card-header">
+              <h2>Parameter Trends (Last 7 Days)</h2>
+              <div class="dropdown-control">
+                <span>TDS</span> <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="parameterChart"></canvas>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="water_stations.js"></script>
+</body>
+</html>
