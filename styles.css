@@ -531,6 +531,62 @@ p {
   margin-top: 4px;
 }
 
+/* Droplets */
+.droplet {
+  position: absolute;
+  border-radius: 50% 50% 50% 5px;
+  background: linear-gradient(135deg, rgba(230, 240, 255, 0.9) 0%, rgba(0, 163, 255, 0.3) 100%);
+  box-shadow: 2px 2px 8px rgba(0, 163, 255, 0.2), inset 1px 1px 3px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 163, 255, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+  transform: rotate(45deg);
+  animation: droplet-float 4s ease-in-out infinite;
+}
+.d-1 { width: 15px; height: 15px; bottom: 80px; left: -20px; animation-delay: 0s; }
+.d-2 { width: 10px; height: 10px; top: 120px; right: -10px; animation-delay: 1.5s; }
+.d-3 { width: 20px; height: 20px; bottom: 150px; right: -40px; animation-delay: 2.5s; }
+.d-4 { width: 12px; height: 12px; top: 180px; left: -40px; animation-delay: 0.8s; }
+.d-5 { width: 18px; height: 18px; bottom: 220px; right: -15px; animation-delay: 3.2s; }
+
+@keyframes droplet-float {
+  0% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(-15px); }
+  100% { transform: rotate(45deg) translateY(0); }
+}
+
+/* Waves */
+.hero-waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  max-height: 150px;
+}
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+@keyframes move-forever {
+  0% { transform: translate3d(-90px,0,0); }
+  100% { transform: translate3d(85px,0,0); }
+}
+
 /* ==========================================================================
    Section 3: Metrics Grid
    ========================================================================== */
