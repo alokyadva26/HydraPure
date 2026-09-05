@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerts - HydraPure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="alerts.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+          <div class="logo-text">
+            <span class="brand-name">HydraPure</span>
+            <span class="brand-tagline">PURE WATER, PURE LIFE</span>
+          </div>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <i data-lucide="home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="water_stations.html" class="nav-item">
+          <i data-lucide="map-pin"></i>
+          <span>Water Stations</span>
+        </a>
+        <a href="water_quality.html" class="nav-item">
+          <i data-lucide="droplet"></i>
+          <span>Water Quality</span>
+        </a>
+        <a href="alerts.html" class="nav-item active">
+          <i data-lucide="triangle-alert"></i>
+          <span>Alerts</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="file-text"></i>
+          <span>Reports</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="map"></i>
+          <span>Map</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="illustration-wrapper">
+          <img src="assets/images/sidebar_illustration.jpg" alt="Mountain illustration">
+        </div>
+        <div class="footer-text">
+          <span>Clean Water</span>
+          <span>Stronger Communities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" placeholder="Search station, village or district...">
+        </div>
+        <div class="header-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">AY</div>
+            <div class="user-info">
+              <span class="user-name">Alok Yadav</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="alerts-body">
+        
+        <!-- Page Header -->
+        <div class="page-header-container">
+          <div class="header-left">
+            <span class="eyebrow">ALERTS</span>
+            <h1 class="main-title">Alerts</h1>
+            <p class="subtitle">Stay informed. Take action for safer water.</p>
+          </div>
+          <div class="header-right-actions">
+            <div class="last-updated">
+              <span class="update-label">Tue, 2 Sep 2026</span>
+              <span class="update-time">10:24 AM</span>
+              <span class="online-status"><span class="dot green"></span> System Online</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Summary Cards -->
+        <div class="summary-cards-row">
+          <!-- Card 1 -->
+          <div class="summary-card card-component">
+            <div class="summary-icon red-bg"><i data-lucide="alert-circle"></i></div>
+            <div class="summary-content">
+              <div class="summary-val">5</div>
+              <div class="summary-label">Critical</div>
+              <div class="summary-desc">Need immediate attention</div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="summary-card card-component">
+            <div class="summary-icon yellow-bg"><i data-lucide="triangle-alert"></i></div>
+            <div class="summary-content">
+              <div class="summary-val">8</div>
+              <div class="summary-label">Warnings</div>
+              <div class="summary-desc">Monitor closely</div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="summary-card card-component">
+            <div class="summary-icon blue-bg"><i data-lucide="info"></i></div>
+            <div class="summary-content">
+              <div class="summary-val">12</div>
+              <div class="summary-label">Info</div>
+              <div class="summary-desc">For your information</div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="summary-card card-component">
+            <div class="summary-icon green-bg"><i data-lucide="check-circle-2"></i></div>
+            <div class="summary-content">
+              <div class="summary-val">24</div>
+              <div class="summary-label">Resolved (Today)</div>
+              <div class="summary-desc">Issues fixed</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content 2-Column Grid -->
+        <div class="main-content-grid">
+          
+          <!-- LEFT: Recent Alerts -->
+          <div class="recent-alerts-card card-component">
+            <div class="card-header">
+              <h2>Recent Alerts</h2>
+              <a href="#" class="view-all-link">View All &rarr;</a>
+            </div>
+            
+            <div class="alerts-filters">
+              <div class="search-input">
+                <i data-lucide="search"></i>
+                <input type="text" placeholder="Search alerts...">
+              </div>
+              <div class="dropdown-control">
+                <span>All Levels</span> <i data-lucide="chevron-down"></i>
+              </div>
+              <div class="dropdown-control">
+                <span>All Districts</span> <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+
+            <div class="alerts-list">
+              <!-- Alert 1 -->
+              <div class="alert-item active" data-alert-id="1">
+                <div class="alert-icon"><span class="dot red large"></span></div>
+                <div class="alert-content">
+                  <div class="alert-title">High TDS detected (1500 ppm)</div>
+                  <div class="alert-desc">Baghmara &ndash; Station 04</div>
+                </div>
+                <div class="alert-meta">
+                  <div class="alert-time">10:15 AM</div>
+                  <div class="badge red">Critical</div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+              </div>
+              <!-- Alert 2 -->
+              <div class="alert-item" data-alert-id="2">
+                <div class="alert-icon"><span class="dot yellow large"></span></div>
+                <div class="alert-content">
+                  <div class="alert-title">Turbidity above limit (6.2 NTU)</div>
+                  <div class="alert-desc">Katras &ndash; Station 02</div>
+                </div>
+                <div class="alert-meta">
+                  <div class="alert-time">09:42 AM</div>
+                  <div class="badge yellow">Warning</div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+              </div>
+              <!-- Alert 3 -->
+              <div class="alert-item" data-alert-id="3">
+                <div class="alert-icon"><span class="dot blue large"></span></div>
+                <div class="alert-content">
+                  <div class="alert-title">System back online</div>
+                  <div class="alert-desc">Govindpur &ndash; Station 03</div>
+                </div>
+                <div class="alert-meta">
+                  <div class="alert-time">08:30 AM</div>
+                  <div class="badge blue">Info</div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+              </div>
+              <!-- Alert 4 -->
+              <div class="alert-item" data-alert-id="4">
+                <div class="alert-icon"><span class="dot yellow large"></span></div>
+                <div class="alert-content">
+                  <div class="alert-title">Low pH detected (5.9)</div>
+                  <div class="alert-desc">Sindri &ndash; Station 05</div>
+                </div>
+                <div class="alert-meta">
+                  <div class="alert-time">07:18 AM</div>
+                  <div class="badge yellow">Warning</div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+              </div>
+              <!-- Alert 5 -->
+              <div class="alert-item" data-alert-id="5">
+                <div class="alert-icon"><span class="dot red large"></span></div>
+                <div class="alert-content">
+                  <div class="alert-title">Residual chlorine low (0.1 mg/L)</div>
+                  <div class="alert-desc">Lodna &ndash; Station 06</div>
+                </div>
+                <div class="alert-meta">
+                  <div class="alert-time">06:55 AM</div>
+                  <div class="badge red">Critical</div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+              </div>
+              <!-- Alert 6 -->
+              <div class="alert-item" data-alert-id="6">
+                <div class="alert-icon"><span class="dot blue large"></span></div>
+                <div class="alert-content">
+                  <div class="alert-title">Scheduled maintenance completed</div>
+                  <div class="alert-desc">Baliapur &ndash; Station 08</div>
+                </div>
+                <div class="alert-meta">
+                  <div class="alert-time">06:20 AM</div>
+                  <div class="badge blue">Info</div>
+                </div>
+                <i data-lucide="chevron-right" class="arrow"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Alert Details -->
+          <div class="alert-details-card card-component">
+            <div class="card-header details-header">
+              <h2>Alert Details</h2>
+              <div class="badge red" id="details-badge"><span class="dot"></span> Critical</div>
+            </div>
+            
+            <div class="details-body">
+              <div class="details-main-info">
+                <div class="alert-icon"><span class="dot red huge" id="details-icon"></span></div>
+                <div class="alert-content">
+                  <h3 id="details-title">High TDS detected (1500 ppm)</h3>
+                  <div class="alert-location" id="details-location">Baghmara &ndash; Station 04</div>
+                  <div class="alert-timestamp" id="details-timestamp">02 Sep 2026, 10:15 AM</div>
+                </div>
+              </div>
+
+              <div class="details-description" id="details-desc">
+                TDS level is 1500 ppm, which is above the acceptable limit (&lt; 500 ppm). Water supply has been automatically blocked to prevent distribution of unsafe water.
+              </div>
+
+              <div class="details-parameters">
+                <div class="param-row">
+                  <div class="param-label">Parameter</div>
+                  <div class="param-val" id="param-type">TDS</div>
+                </div>
+                <div class="param-row">
+                  <div class="param-label">Detected Value</div>
+                  <div class="param-val" id="param-val">1500 ppm</div>
+                </div>
+                <div class="param-row">
+                  <div class="param-label">Acceptable Range</div>
+                  <div class="param-val" id="param-range">&lt; 500 ppm</div>
+                </div>
+                <div class="param-row">
+                  <div class="param-label">Current Status</div>
+                  <div class="param-val"><span class="dot red" id="param-status-dot"></span> <span id="param-status">Supply blocked</span></div>
+                </div>
+                <div class="param-row">
+                  <div class="param-label">Action Taken</div>
+                  <div class="param-val" id="param-action">Automatic valve closed</div>
+                </div>
+                <div class="param-row">
+                  <div class="param-label">Notified To</div>
+                  <div class="param-val" id="param-notified">Block Officer, Jal Prabandhan Dept.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="details-footer">
+              <button class="btn-primary" onclick="window.location.href='water_stations.html'"><i data-lucide="map-pin"></i> View Station</button>
+              <button class="btn-secondary" id="btn-resolve"><i data-lucide="check"></i> Mark as Resolved</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="alerts.js"></script>
+</body>
+</html>
