@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - HydraPure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+          <div class="logo-text">
+            <span class="brand-name">HydraPure</span>
+            <span class="brand-tagline">PURE WATER, PURE LIFE</span>
+          </div>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item"><i data-lucide="home"></i><span>Dashboard</span></a>
+        <a href="water_stations.html" class="nav-item"><i data-lucide="map-pin"></i><span>Water Stations</span></a>
+        <a href="water_quality.html" class="nav-item"><i data-lucide="droplet"></i><span>Water Quality</span></a>
+        <a href="alerts.html" class="nav-item"><i data-lucide="triangle-alert"></i><span>Alerts</span></a>
+        <a href="reports.html" class="nav-item"><i data-lucide="file-text"></i><span>Reports</span></a>
+        <a href="map.html" class="nav-item"><i data-lucide="map"></i><span>Map</span></a>
+        <a href="settings.html" class="nav-item active"><i data-lucide="settings"></i><span>Settings</span></a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="illustration-wrapper">
+          <img src="assets/images/sidebar_illustration.jpg" alt="Mountain illustration">
+        </div>
+        <div class="footer-text">
+          <span>Clean Water</span>
+          <span>Stronger Communities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content">
+
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" placeholder="Search station, village or district...">
+        </div>
+        <div class="header-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="divider"></div>
+          <div class="user-profile" id="user-btn">
+            <div class="avatar">AY</div>
+            <div class="user-info">
+              <span class="user-name">Alok Yadav</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Settings Body -->
+      <div class="settings-body">
+
+        <!-- Page Header -->
+        <div class="settings-page-header">
+          <div class="page-header-left">
+            <span class="eyebrow">SETTINGS</span>
+            <h1 class="main-title">Manage Your Account &amp; System Preferences</h1>
+            <p class="subtitle">Keep your profile updated and customize your experience for a safer, cleaner tomorrow.</p>
+          </div>
+          <div class="page-header-right">
+            <div class="header-quote">&ldquo; Better settings. A cleaner tomorrow. &rdquo;</div>
+            <div class="header-illustration">
+              <svg viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg">
+                <rect width="160" height="80" fill="#e8f4fd" rx="6"/>
+                <ellipse cx="80" cy="80" rx="80" ry="30" fill="#c5e1f5" opacity="0.5"/>
+                <ellipse cx="80" cy="82" rx="70" ry="20" fill="#a8d4ef" opacity="0.4"/>
+                <!-- Mountains -->
+                <polygon points="20,70 50,30 80,70" fill="#90bce0" opacity="0.6"/>
+                <polygon points="50,70 85,20 120,70" fill="#6aaed6" opacity="0.7"/>
+                <polygon points="95,70 125,38 155,70" fill="#90bce0" opacity="0.5"/>
+                <!-- Trees -->
+                <rect x="38" y="55" width="2" height="15" fill="#5a8a6e" opacity="0.8"/>
+                <polygon points="39,35 32,58 46,58" fill="#4a7a5e" opacity="0.8"/>
+                <rect x="110" y="58" width="2" height="12" fill="#5a8a6e" opacity="0.8"/>
+                <polygon points="111,40 104,60 118,60" fill="#4a7a5e" opacity="0.8"/>
+                <!-- Water reflection -->
+                <path d="M10,72 Q40,66 80,70 Q120,74 150,68 L150,80 L10,80Z" fill="#7fc4e8" opacity="0.4"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Tabs -->
+        <div class="settings-tabs">
+          <button class="tab-btn active" data-tab="profile">
+            <i data-lucide="user"></i> Profile
+          </button>
+          <button class="tab-btn" data-tab="notifications">
+            <i data-lucide="bell"></i> Notifications
+          </button>
+          <button class="tab-btn" data-tab="appearance">
+            <i data-lucide="palette"></i> Appearance
+          </button>
+          <button class="tab-btn" data-tab="security">
+            <i data-lucide="shield"></i> Security
+          </button>
+          <button class="tab-btn" data-tab="data">
+            <i data-lucide="database"></i> Data &amp; Backup
+          </button>
+          <button class="tab-btn" data-tab="system">
+            <i data-lucide="cpu"></i> System
+          </button>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="settings-grid">
+
+          <!-- ===== LEFT COLUMN ===== -->
+          <div class="left-col">
+
+            <!-- Profile Information Card -->
+            <div class="card" id="profile-card">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <i data-lucide="user-circle" class="card-icon blue-icon"></i>
+                  <div>
+                    <h2>Profile Information</h2>
+                    <p class="card-subtitle">Update your personal details and profile information.</p>
+                  </div>
+                </div>
+                <button class="btn-primary" id="save-profile-btn">
+                  <i data-lucide="save"></i> Save Changes
+                </button>
+              </div>
+              <div class="card-body profile-body">
+                <!-- Avatar -->
+                <div class="avatar-section">
+                  <div class="avatar-circle">AY
+                    <div class="camera-badge"><i data-lucide="camera"></i></div>
+                  </div>
+                  <button class="btn-change-photo" id="change-photo-btn">
+                    <i data-lucide="upload"></i> Change Photo
+                  </button>
+                  <p class="photo-hint">JPG, PNG or WebP (Max 2MB)</p>
+                  <input type="file" id="photo-input" accept="image/*" style="display:none">
+                </div>
+                <!-- Form Fields -->
+                <div class="profile-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Full Name</label>
+                      <div class="input-wrap">
+                        <i data-lucide="user"></i>
+                        <input type="text" value="Alok Yadav" id="inp-name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Email Address</label>
+                      <div class="input-wrap">
+                        <i data-lucide="mail"></i>
+                        <input type="email" value="alok.yadav@hydrapure.org" id="inp-email">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Phone Number</label>
+                      <div class="input-wrap">
+                        <i data-lucide="phone"></i>
+                        <input type="tel" value="+91 98765 43210" id="inp-phone">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label>Role</label>
+                      <div class="input-wrap readonly-wrap">
+                        <i data-lucide="shield"></i>
+                        <input type="text" value="Admin" readonly id="inp-role">
+                        <i data-lucide="chevron-down" class="trail-icon"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Change Password Card -->
+            <div class="card" id="password-card">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <i data-lucide="lock" class="card-icon blue-icon"></i>
+                  <div>
+                    <h2>Change Password</h2>
+                    <p class="card-subtitle">Update your password to keep your account secure.</p>
+                  </div>
+                </div>
+                <button class="btn-primary" id="update-pwd-btn">
+                  <i data-lucide="key"></i> Update Password
+                </button>
+              </div>
+              <div class="card-body pw-body">
+                <div class="form-row three-col">
+                  <div class="form-group">
+                    <label>Current Password</label>
+                    <div class="input-wrap">
+                      <i data-lucide="lock"></i>
+                      <input type="password" placeholder="Enter current password" id="inp-cur-pw">
+                      <button class="eye-btn" data-target="inp-cur-pw"><i data-lucide="eye"></i></button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>New Password</label>
+                    <div class="input-wrap">
+                      <i data-lucide="lock"></i>
+                      <input type="password" placeholder="Enter new password" id="inp-new-pw">
+                      <button class="eye-btn" data-target="inp-new-pw"><i data-lucide="eye"></i></button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <div class="input-wrap">
+                      <i data-lucide="lock"></i>
+                      <input type="password" placeholder="Confirm new password" id="inp-conf-pw">
+                      <button class="eye-btn" data-target="inp-conf-pw"><i data-lucide="eye"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="info-strip">
+                  <i data-lucide="info"></i>
+                  Password must be at least 8 characters long and include a mix of letters, numbers and symbols.
+                </div>
+              </div>
+            </div>
+
+            <!-- Preferences Card -->
+            <div class="card" id="prefs-card">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <i data-lucide="settings-2" class="card-icon blue-icon"></i>
+                  <div>
+                    <h2>Preferences</h2>
+                    <p class="card-subtitle">Customize your experience on the platform.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body prefs-body">
+                <div class="prefs-selects-row">
+                  <div class="form-group">
+                    <label>Language</label>
+                    <div class="select-wrap">
+                      <i data-lucide="globe"></i>
+                      <select><option>English</option><option>Hindi</option></select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Date Format</label>
+                    <div class="select-wrap">
+                      <i data-lucide="calendar"></i>
+                      <select><option>DD MMM YYYY</option><option>MM/DD/YYYY</option><option>YYYY-MM-DD</option></select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Time Format</label>
+                    <div class="select-wrap">
+                      <i data-lucide="clock"></i>
+                      <select><option>12 Hour (AM/PM)</option><option>24 Hour</option></select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Default District View</label>
+                    <div class="select-wrap">
+                      <i data-lucide="map"></i>
+                      <select><option>All Districts</option><option>Dhanbad</option><option>Ranchi</option></select>
+                    </div>
+                  </div>
+                </div>
+                <div class="toggle-row">
+                  <div class="toggle-item">
+                    <i data-lucide="mail" class="tgl-icon"></i>
+                    <div class="toggle-info">
+                      <div class="toggle-label">Email Notifications</div>
+                      <div class="toggle-desc">Receive important alerts and updates.</div>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked id="tgl-email">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="toggle-item">
+                    <i data-lucide="file-text" class="tgl-icon"></i>
+                    <div class="toggle-info">
+                      <div class="toggle-label">Report Notifications</div>
+                      <div class="toggle-desc">Get notified when reports are ready.</div>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" checked id="tgl-report">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="toggle-item">
+                    <i data-lucide="zap" class="tgl-icon"></i>
+                    <div class="toggle-info">
+                      <div class="toggle-label">Product Updates</div>
+                      <div class="toggle-desc">Receive news and feature updates.</div>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="tgl-updates">
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Danger Zone + Branding Bottom Row -->
+            <div class="bottom-row">
+              <div class="danger-zone-card">
+                <div class="danger-icon-wrap"><i data-lucide="triangle-alert"></i></div>
+                <div class="danger-text">
+                  <div class="danger-title">Danger Zone</div>
+                  <div class="danger-desc">These actions are irreversible. Please proceed with caution.</div>
+                </div>
+                <button class="btn-danger" id="delete-account-btn">
+                  <i data-lucide="trash-2"></i> Delete My Account
+                </button>
+              </div>
+              <div class="branding-banner">
+                <div class="banner-svg">
+                  <svg viewBox="0 0 120 56" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="120" height="56" fill="#dbeafe" rx="4"/>
+                    <path d="M0,35 Q30,18 60,30 Q90,42 120,25 L120,56 L0,56Z" fill="#93c5fd" opacity="0.4"/>
+                    <path d="M0,44 Q25,32 55,40 Q85,48 120,36 L120,56 L0,56Z" fill="#60a5fa" opacity="0.3"/>
+                    <polygon points="18,40 30,18 42,40" fill="#3b82f6" opacity="0.3"/>
+                    <polygon points="72,38 86,14 100,38" fill="#3b82f6" opacity="0.25"/>
+                    <rect x="27" y="32" width="2" height="8" fill="#2563eb" opacity="0.4"/>
+                    <polygon points="28,22 23,34 33,34" fill="#1d4ed8" opacity="0.35"/>
+                  </svg>
+                </div>
+                <div class="banner-content">
+                  <div class="banner-icon-wrap"><i data-lucide="leaf"></i></div>
+                  <div>
+                    <div class="banner-title">Your Account Powers Cleaner Communities</div>
+                    <div class="banner-sub">Together for a healthier, safer tomorrow.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- end left-col -->
+
+          <!-- ===== RIGHT COLUMN ===== -->
+          <div class="right-col">
+
+            <!-- Organization Information Card -->
+            <div class="card" id="org-card">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <i data-lucide="shield-check" class="card-icon green-icon"></i>
+                  <div>
+                    <h2>Organization Information</h2>
+                    <p class="card-subtitle">Details about your organization.</p>
+                  </div>
+                </div>
+                <button class="btn-outline" id="edit-org-btn"><i data-lucide="pencil"></i> Edit</button>
+              </div>
+              <div class="card-body org-body">
+                <div class="org-brand">
+                  <div class="org-logo-circle"><i data-lucide="landmark"></i></div>
+                  <div>
+                    <div class="org-name">HydraPure</div>
+                    <div class="org-tagline">Pure Water, Pure Life</div>
+                  </div>
+                </div>
+                <div class="org-details">
+                  <div class="org-row">
+                    <div class="org-item">
+                      <i data-lucide="map-pin"></i>
+                      <div>
+                        <div class="org-label">Location</div>
+                        <div class="org-val">Ranchi, Jharkhand, India</div>
+                      </div>
+                    </div>
+                    <div class="org-item">
+                      <i data-lucide="mail"></i>
+                      <div>
+                        <div class="org-label">Contact Email</div>
+                        <div class="org-val">support@hydrapure.org</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="org-row">
+                    <div class="org-item">
+                      <i data-lucide="phone"></i>
+                      <div>
+                        <div class="org-label">Contact Number</div>
+                        <div class="org-val">+91 651 234 5678</div>
+                      </div>
+                    </div>
+                    <div class="org-item">
+                      <i data-lucide="globe"></i>
+                      <div>
+                        <div class="org-label">Website</div>
+                        <div class="org-val link">www.hydrapure.org</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Account Status Card -->
+            <div class="card" id="account-card">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <i data-lucide="shield-check" class="card-icon green-icon"></i>
+                  <div>
+                    <h2>Account Status</h2>
+                  </div>
+                </div>
+                <span class="status-active-badge">Active</span>
+              </div>
+              <div class="card-body acc-body">
+                <p class="acc-desc">Your account is active and has full access to the system.</p>
+                <div class="acc-details">
+                  <div class="acc-row">
+                    <i data-lucide="clock"></i>
+                    <span class="acc-label">Last Login</span>
+                    <span class="acc-val">02 Sep 2026, 10:24 AM</span>
+                  </div>
+                  <div class="acc-row">
+                    <i data-lucide="calendar"></i>
+                    <span class="acc-label">Account Created</span>
+                    <span class="acc-val">15 Jan 2025, 11:30 AM</span>
+                  </div>
+                  <div class="acc-row">
+                    <i data-lucide="user-cog"></i>
+                    <span class="acc-label">Account Type</span>
+                    <span class="acc-val">Administrator</span>
+                  </div>
+                  <div class="acc-row">
+                    <i data-lucide="lock"></i>
+                    <span class="acc-label">Two-Factor Auth</span>
+                    <span class="acc-val enabled-badge">Enabled</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Actions Card -->
+            <div class="card" id="quick-card">
+              <div class="card-header">
+                <div class="card-title-group">
+                  <i data-lucide="zap" class="card-icon blue-icon"></i>
+                  <div>
+                    <h2>Quick Actions</h2>
+                    <p class="card-subtitle">Perform common account actions.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body qa-body">
+                <div class="qa-item" id="qa-export">
+                  <div class="qa-icon blue-icon-bg"><i data-lucide="download"></i></div>
+                  <div class="qa-text">
+                    <div class="qa-title">Export My Data</div>
+                    <div class="qa-desc">Download your account data (PDF/CSV)</div>
+                  </div>
+                  <i data-lucide="chevron-right" class="qa-arrow"></i>
+                </div>
+                <div class="qa-item danger-qa" id="qa-delete">
+                  <div class="qa-icon red-icon-bg"><i data-lucide="trash-2"></i></div>
+                  <div class="qa-text">
+                    <div class="qa-title">Delete Account</div>
+                    <div class="qa-desc">Permanently delete your account</div>
+                  </div>
+                  <i data-lucide="chevron-right" class="qa-arrow"></i>
+                </div>
+                <div class="qa-item" id="qa-logout">
+                  <div class="qa-icon gray-icon-bg"><i data-lucide="log-out"></i></div>
+                  <div class="qa-text">
+                    <div class="qa-title">Logout</div>
+                    <div class="qa-desc">Sign out from your account</div>
+                  </div>
+                  <i data-lucide="chevron-right" class="qa-arrow"></i>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- end right-col -->
+        </div><!-- end settings-grid -->
+      </div><!-- end settings-body -->
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i data-lucide="check-circle-2"></i>
+    <span id="toast-msg">Changes saved!</span>
+  </div>
+
+  <!-- Confirm Modal -->
+  <div class="modal-overlay" id="confirm-modal">
+    <div class="confirm-modal">
+      <div class="confirm-icon"><i data-lucide="triangle-alert"></i></div>
+      <h3>Delete Account?</h3>
+      <p>This action is permanent and cannot be undone. All your data will be lost.</p>
+      <div class="confirm-actions">
+        <button class="btn-outline" id="confirm-cancel">Cancel</button>
+        <button class="btn-danger-solid" id="confirm-delete">Yes, Delete Account</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

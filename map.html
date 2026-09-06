@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map - HydraPure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+          <div class="logo-text">
+            <span class="brand-name">HydraPure</span>
+            <span class="brand-tagline">PURE WATER, PURE LIFE</span>
+          </div>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <i data-lucide="home"></i><span>Dashboard</span>
+        </a>
+        <a href="water_stations.html" class="nav-item">
+          <i data-lucide="map-pin"></i><span>Water Stations</span>
+        </a>
+        <a href="water_quality.html" class="nav-item">
+          <i data-lucide="droplet"></i><span>Water Quality</span>
+        </a>
+        <a href="alerts.html" class="nav-item">
+          <i data-lucide="triangle-alert"></i><span>Alerts</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <i data-lucide="file-text"></i><span>Reports</span>
+        </a>
+        <a href="map.html" class="nav-item active">
+          <i data-lucide="map"></i><span>Map</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i data-lucide="settings"></i><span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="illustration-wrapper">
+          <img src="assets/images/sidebar_illustration.jpg" alt="Mountain illustration">
+        </div>
+        <div class="footer-text">
+          <span>Clean Water</span>
+          <span>Stronger Communities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" id="global-search" placeholder="Search station, village or district...">
+        </div>
+        <div class="header-right">
+          <button class="notification-btn" id="notif-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="divider"></div>
+          <div class="user-profile" id="user-btn">
+            <div class="avatar">AY</div>
+            <div class="user-info">
+              <span class="user-name">Alok Yadav</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Map Body -->
+      <div class="map-body">
+
+        <!-- Page Header + Stat Cards Row -->
+        <div class="page-top-row">
+          <div class="page-header">
+            <span class="eyebrow">MAP VIEW</span>
+            <h1 class="main-title">Water Stations Across Jharkhand</h1>
+            <p class="subtitle">Visualize the location and status of all water stations in real-time.</p>
+          </div>
+          <div class="stat-cards-row">
+            <div class="stat-card">
+              <span class="stat-dot safe-dot"></span>
+              <div class="stat-info">
+                <div class="stat-num">18</div>
+                <div class="stat-label">Safe</div>
+                <div class="stat-pct">69%</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-dot caution-dot"></span>
+              <div class="stat-info">
+                <div class="stat-num">5</div>
+                <div class="stat-label">Under Caution</div>
+                <div class="stat-pct">19%</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-dot blocked-dot"></span>
+              <div class="stat-info">
+                <div class="stat-num">3</div>
+                <div class="stat-label">Blocked</div>
+                <div class="stat-pct">12%</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon-wrap">
+                <i data-lucide="landmark"></i>
+              </div>
+              <div class="stat-info">
+                <div class="stat-num">26</div>
+                <div class="stat-label">Total Stations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Grid: Map + Station Panel -->
+        <div class="content-grid">
+
+          <!-- LEFT: Map + Selected Station -->
+          <div class="map-column">
+
+            <!-- Map Container -->
+            <div class="map-container" id="map-container">
+              <!-- Zoom Controls -->
+              <div class="zoom-controls">
+                <button class="zoom-btn" id="zoom-in">+</button>
+                <button class="zoom-btn" id="zoom-out">−</button>
+              </div>
+
+              <!-- SVG Jharkhand Map -->
+              <div class="map-svg-wrapper" id="map-svg-wrapper">
+                <svg id="jharkhand-map" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+
+                  <!-- Outer region background -->
+                  <rect width="560" height="420" fill="#e8f4f0" rx="4"/>
+
+                  <!-- Neighbouring state labels -->
+                  <text x="290" y="22" text-anchor="middle" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1" font-family="Inter,sans-serif">BIHAR</text>
+                  <text x="75" y="310" text-anchor="middle" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1" font-family="Inter,sans-serif">CHHATTISGARH</text>
+                  <text x="490" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1" font-family="Inter,sans-serif">WEST</text>
+                  <text x="490" y="273" text-anchor="middle" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1" font-family="Inter,sans-serif">BENGAL</text>
+                  <text x="350" y="408" text-anchor="middle" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="1" font-family="Inter,sans-serif">ODISHA</text>
+
+                  <!-- Jharkhand main shape -->
+                  <path id="jharkhand-shape"
+                    d="M 130,45
+                       L 165,38 L 200,32 L 240,28 L 280,25 L 320,28 L 360,32 L 400,38 L 430,48
+                       L 448,60 L 455,80 L 460,105 L 458,130 L 450,150
+                       L 470,162 L 480,180 L 475,200 L 460,215
+                       L 465,235 L 458,252 L 445,265 L 430,275
+                       L 435,295 L 428,315 L 412,328 L 395,335
+                       L 385,355 L 368,368 L 348,375 L 328,378
+                       L 308,382 L 290,380 L 272,375 L 252,368
+                       L 235,355 L 222,340 L 208,325 L 195,310
+                       L 178,300 L 162,292 L 148,280 L 138,265
+                       L 130,248 L 118,232 L 108,215 L 100,195
+                       L 95,175 L 92,155 L 90,132 L 93,108
+                       L 98,85 L 110,65 Z"
+                    fill="#d4ecd8" stroke="#a8c5b0" stroke-width="1.5"/>
+
+                  <!-- Internal district lines (approximate) -->
+                  <!-- North-South dividers -->
+                  <line x1="200" y1="45" x2="195" y2="310" stroke="#b8d4be" stroke-width="0.8" stroke-dasharray="3,3"/>
+                  <line x1="280" y1="30" x2="272" y2="375" stroke="#b8d4be" stroke-width="0.8" stroke-dasharray="3,3"/>
+                  <line x1="360" y1="35" x2="348" y2="378" stroke="#b8d4be" stroke-width="0.8" stroke-dasharray="3,3"/>
+                  <!-- East-West dividers -->
+                  <line x1="95" y1="155" x2="460" y2="150" stroke="#b8d4be" stroke-width="0.8" stroke-dasharray="3,3"/>
+                  <line x1="92" y1="220" x2="465" y2="235" stroke="#b8d4be" stroke-width="0.8" stroke-dasharray="3,3"/>
+                  <line x1="100" y1="290" x2="435" y2="295" stroke="#b8d4be" stroke-width="0.8" stroke-dasharray="3,3"/>
+
+                  <!-- District Name Labels -->
+                  <text x="148" y="95" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Garhwa</text>
+                  <text x="198" y="115" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Palamu</text>
+                  <text x="245" y="95" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Chatra</text>
+                  <text x="310" y="85" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Koderma</text>
+                  <text x="372" y="100" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Hazaribagh</text>
+                  <text x="425" y="90" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Giridih</text>
+                  <text x="460" y="130" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Deoghar</text>
+                  <text x="480" y="170" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Godda</text>
+                  <text x="462" y="200" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Dumka</text>
+                  <text x="452" y="240" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Jamtara</text>
+                  <text x="162" y="190" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Latehar</text>
+                  <text x="170" y="255" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Lohardaga</text>
+                  <text x="248" y="220" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Ranchi</text>
+                  <text x="310" y="200" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Ramgarh</text>
+                  <text x="374" y="185" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Dhanbad</text>
+                  <text x="420" y="215" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Bokaro</text>
+                  <text x="215" y="290" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Khunti</text>
+                  <text x="163" y="325" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Gumla</text>
+                  <text x="338" y="275" text-anchor="middle" font-size="7.5" fill="#4a6741" font-family="Inter,sans-serif">Saraikela</text>
+                  <text x="338" y="285" text-anchor="middle" font-size="7.5" fill="#4a6741" font-family="Inter,sans-serif">Kharsawan</text>
+                  <text x="165" y="370" text-anchor="middle" font-size="8.5" fill="#4a6741" font-family="Inter,sans-serif">Simdega</text>
+                  <text x="238" y="358" text-anchor="middle" font-size="7.5" fill="#4a6741" font-family="Inter,sans-serif">West</text>
+                  <text x="238" y="368" text-anchor="middle" font-size="7.5" fill="#4a6741" font-family="Inter,sans-serif">Singhbhum</text>
+                  <text x="380" y="345" text-anchor="middle" font-size="7.5" fill="#4a6741" font-family="Inter,sans-serif">East</text>
+                  <text x="380" y="355" text-anchor="middle" font-size="7.5" fill="#4a6741" font-family="Inter,sans-serif">Singhbhum</text>
+
+                  <!-- Station Markers — rendered by JS as <circle> elements -->
+                  <g id="station-markers"></g>
+                </svg>
+              </div>
+
+              <!-- Map Legend -->
+              <div class="map-legend">
+                <span class="legend-item"><span class="legend-dot safe-dot"></span>Safe</span>
+                <span class="legend-item"><span class="legend-dot caution-dot"></span>Under Caution</span>
+                <span class="legend-item"><span class="legend-dot blocked-dot"></span>Blocked</span>
+              </div>
+            </div>
+
+            <!-- Selected Station Card -->
+            <div class="selected-station-card" id="selected-station-card">
+              <div class="station-photo-wrap">
+                <img id="station-photo" src="assets/images/jharia_station.jpg" alt="Station Photo">
+              </div>
+              <div class="station-info-main">
+                <div class="station-title-row">
+                  <h3 id="station-name">Jharia Station</h3>
+                  <span class="status-badge safe-badge" id="station-status-badge">
+                    <span class="status-dot-sm safe-dot"></span> Operational
+                  </span>
+                </div>
+                <div class="station-meta">
+                  <div class="meta-item">
+                    <i data-lucide="map-pin"></i>
+                    <span id="station-location">Jharia, Dhanbad</span>
+                  </div>
+                  <div class="meta-item">
+                    <i data-lucide="users"></i>
+                    <span id="station-households">~ 300 households</span>
+                  </div>
+                </div>
+              </div>
+              <div class="station-params-col">
+                <div class="params-grid">
+                  <div class="param-item">
+                    <div class="param-label">pH</div>
+                    <div class="param-val" id="param-ph">7.2</div>
+                  </div>
+                  <div class="param-item">
+                    <div class="param-label">TDS</div>
+                    <div class="param-val" id="param-tds">310 ppm</div>
+                  </div>
+                  <div class="param-item">
+                    <div class="param-label">Turbidity</div>
+                    <div class="param-val" id="param-turbidity">1.2 NTU</div>
+                  </div>
+                  <div class="param-item">
+                    <div class="param-label">Temperature</div>
+                    <div class="param-val" id="param-temp">24.8 °C</div>
+                  </div>
+                </div>
+                <div class="station-footer-row">
+                  <div class="station-updated">
+                    <span id="station-updated">Last Updated: 02 Sep 2026, 10:22 AM</span>
+                    <span class="online-badge"><span class="status-dot-sm safe-dot"></span> Online</span>
+                  </div>
+                  <div class="station-actions">
+                    <button class="btn-outline" onclick="window.location.href='water_stations.html'">View Details</button>
+                    <button class="btn-primary" onclick="window.location.href='reports.html'">View Reports</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- end map-column -->
+
+          <!-- RIGHT: Station List Panel -->
+          <div class="station-panel">
+            <div class="panel-header">
+              <h2>Stations <span class="count-badge">26</span></h2>
+            </div>
+            <div class="panel-search">
+              <i data-lucide="search"></i>
+              <input type="text" id="station-search" placeholder="Search station or district...">
+            </div>
+            <div class="panel-filters">
+              <select id="district-filter" class="filter-select">
+                <option value="">All Districts</option>
+                <option value="Dhanbad">Dhanbad</option>
+                <option value="Ranchi">Ranchi</option>
+                <option value="Hazaribagh">Hazaribagh</option>
+                <option value="Bokaro">Bokaro</option>
+                <option value="Giridih">Giridih</option>
+                <option value="Dumka">Dumka</option>
+              </select>
+              <select id="status-filter" class="filter-select">
+                <option value="">All Status</option>
+                <option value="safe">Operational</option>
+                <option value="caution">Caution</option>
+                <option value="blocked">Blocked</option>
+              </select>
+            </div>
+            <div class="station-list" id="station-list">
+              <!-- Populated by JS -->
+            </div>
+          </div><!-- end station-panel -->
+
+        </div><!-- end content-grid -->
+      </div><!-- end map-body -->
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i data-lucide="check-circle-2"></i>
+    <span id="toast-msg">Done!</span>
+  </div>
+
+  <script src="map.js"></script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports - HydraPure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reports.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+          <div class="logo-text">
+            <span class="brand-name">HydraPure</span>
+            <span class="brand-tagline">PURE WATER, PURE LIFE</span>
+          </div>
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <i data-lucide="home"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="water_stations.html" class="nav-item">
+          <i data-lucide="map-pin"></i>
+          <span>Water Stations</span>
+        </a>
+        <a href="water_quality.html" class="nav-item">
+          <i data-lucide="droplet"></i>
+          <span>Water Quality</span>
+        </a>
+        <a href="alerts.html" class="nav-item">
+          <i data-lucide="triangle-alert"></i>
+          <span>Alerts</span>
+        </a>
+        <a href="reports.html" class="nav-item active">
+          <i data-lucide="file-text"></i>
+          <span>Reports</span>
+        </a>
+        <a href="map.html" class="nav-item">
+          <i data-lucide="map"></i>
+          <span>Map</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+          <i data-lucide="settings"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="illustration-wrapper">
+          <img src="assets/images/sidebar_illustration.jpg" alt="Mountain illustration">
+        </div>
+        <div class="footer-text">
+          <span>Clean Water</span>
+          <span>Stronger Communities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" placeholder="Search station, village or district...">
+        </div>
+        <div class="header-right">
+          <button class="notification-btn" id="notif-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="divider"></div>
+          <div class="user-profile" id="user-btn">
+            <div class="avatar">AY</div>
+            <div class="user-info">
+              <span class="user-name">Alok Yadav</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Reports Body -->
+      <div class="reports-body">
+
+        <!-- Page Header Row -->
+        <div class="page-header-container">
+          <div class="header-left">
+            <span class="eyebrow">REPORTS</span>
+            <h1 class="main-title">Water Safety Reports</h1>
+            <p class="subtitle">Generate and view water quality, station performance and alert reports.</p>
+          </div>
+          <div class="header-right-actions">
+            <button class="date-range-btn" id="date-range-btn">
+              <i data-lucide="calendar"></i>
+              <span>01 Aug 2026 &mdash; 02 Sep 2026</span>
+            </button>
+            <button class="btn-generate" id="generate-btn">
+              <i data-lucide="file-text"></i>
+              Generate Report
+            </button>
+          </div>
+        </div>
+
+        <!-- Summary Cards Row -->
+        <div class="summary-cards-row">
+          <!-- Card 1: Total Stations -->
+          <div class="summary-card card-component">
+            <div class="summary-icon blue-bg">
+              <i data-lucide="file-text"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-val">26</div>
+              <div class="summary-label">Total Stations</div>
+              <div class="summary-desc">in Jharkhand</div>
+            </div>
+          </div>
+          <!-- Card 2: Safe -->
+          <div class="summary-card card-component">
+            <div class="summary-icon green-bg">
+              <i data-lucide="check-circle-2"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-val">18</div>
+              <div class="summary-label">Stations with Safe Water</div>
+              <div class="summary-desc">69% of total</div>
+            </div>
+          </div>
+          <!-- Card 3: Issues -->
+          <div class="summary-card card-component">
+            <div class="summary-icon yellow-bg">
+              <i data-lucide="triangle-alert"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-val">5</div>
+              <div class="summary-label">Stations with Issues</div>
+              <div class="summary-desc">19% of total</div>
+            </div>
+          </div>
+          <!-- Card 4: Blocked -->
+          <div class="summary-card card-component">
+            <div class="summary-icon red-bg">
+              <i data-lucide="x-circle"></i>
+            </div>
+            <div class="summary-content">
+              <div class="summary-val">3</div>
+              <div class="summary-label">Stations Blocked</div>
+              <div class="summary-desc">12% of total</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Row: Quality Summary + Stations by Status -->
+        <div class="middle-row">
+
+          <!-- LEFT: Water Quality Summary -->
+          <div class="quality-summary-card card-component">
+            <div class="card-header">
+              <div>
+                <h2>Water Quality Summary</h2>
+                <p class="card-subtitle">Average values across all stations (Selected period)</p>
+              </div>
+            </div>
+            <div class="quality-params-row">
+              <!-- pH -->
+              <div class="param-card">
+                <div class="param-icon">
+                  <i data-lucide="droplet"></i>
+                </div>
+                <div class="param-name">pH</div>
+                <div class="param-value">7.2</div>
+                <div class="param-range">(6.5 – 8.5)</div>
+                <span class="status-dot green-dot"></span>
+              </div>
+              <!-- TDS -->
+              <div class="param-card">
+                <div class="param-icon">
+                  <i data-lucide="waves"></i>
+                </div>
+                <div class="param-name">TDS</div>
+                <div class="param-value">420 ppm</div>
+                <div class="param-range">(&lt; 500)</div>
+                <span class="status-dot green-dot"></span>
+              </div>
+              <!-- Turbidity -->
+              <div class="param-card">
+                <div class="param-icon">
+                  <i data-lucide="cloud"></i>
+                </div>
+                <div class="param-name">Turbidity</div>
+                <div class="param-value">1.8 NTU</div>
+                <div class="param-range">(&lt; 5)</div>
+                <span class="status-dot green-dot"></span>
+              </div>
+              <!-- Temperature -->
+              <div class="param-card">
+                <div class="param-icon">
+                  <i data-lucide="thermometer"></i>
+                </div>
+                <div class="param-name">Temperature</div>
+                <div class="param-value">25.1 °C</div>
+                <div class="param-range">(10 – 35)</div>
+                <span class="status-dot green-dot"></span>
+              </div>
+              <!-- Residual Chlorine -->
+              <div class="param-card">
+                <div class="param-icon">
+                  <i data-lucide="flask-conical"></i>
+                </div>
+                <div class="param-name">Residual Chlorine</div>
+                <div class="param-value">0.4 mg/L</div>
+                <div class="param-range">(0.2 – 1.0)</div>
+                <span class="status-dot green-dot"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Stations by Status -->
+          <div class="status-chart-card card-component">
+            <div class="card-header">
+              <h2>Stations by Status</h2>
+            </div>
+            <div class="chart-body">
+              <div class="donut-wrapper">
+                <canvas id="statusDonut" width="130" height="130"></canvas>
+                <div class="donut-center">
+                  <span class="donut-count">26</span>
+                  <span class="donut-label">Stations</span>
+                </div>
+              </div>
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <span class="legend-dot safe-dot"></span>
+                  <span class="legend-count">18</span>
+                  <span class="legend-label">Safe</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot caution-dot"></span>
+                  <span class="legend-count">5</span>
+                  <span class="legend-label">Under Caution</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot blocked-dot"></span>
+                  <span class="legend-count">3</span>
+                  <span class="legend-label">Blocked</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Row: Generated Reports + Quick Actions -->
+        <div class="bottom-row">
+
+          <!-- LEFT: Generated Reports Table -->
+          <div class="generated-reports-card card-component">
+            <div class="card-header">
+              <div>
+                <h2>Generated Reports</h2>
+                <p class="card-subtitle">Your previously generated reports.</p>
+              </div>
+            </div>
+            <table class="reports-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Report Name</th>
+                  <th>Type</th>
+                  <th>Period</th>
+                  <th>Generated On</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Monthly Water Quality Report</td>
+                  <td><span class="type-badge quality">Quality</span></td>
+                  <td>Aug 2026</td>
+                  <td>02 Sep 2026, 10:24 AM</td>
+                  <td><button class="download-btn"><i data-lucide="download"></i> Download</button></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Station Performance Report</td>
+                  <td><span class="type-badge performance">Performance</span></td>
+                  <td>Aug 2026</td>
+                  <td>01 Sep 2026, 05:12 PM</td>
+                  <td><button class="download-btn"><i data-lucide="download"></i> Download</button></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Alert Summary Report</td>
+                  <td><span class="type-badge alerts">Alerts</span></td>
+                  <td>Aug 2026</td>
+                  <td>01 Sep 2026, 02:18 PM</td>
+                  <td><button class="download-btn"><i data-lucide="download"></i> Download</button></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>District-wise Comparison</td>
+                  <td><span class="type-badge summary">Summary</span></td>
+                  <td>Aug 2026</td>
+                  <td>31 Aug 2026, 11:06 AM</td>
+                  <td><button class="download-btn"><i data-lucide="download"></i> Download</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- RIGHT: Quick Report Actions -->
+          <div class="quick-actions-card card-component">
+            <div class="card-header">
+              <h2>Quick Report Actions</h2>
+            </div>
+            <div class="quick-actions-list">
+              <div class="quick-action-item" onclick="triggerQuickReport('quality')">
+                <div class="qa-icon blue-bg">
+                  <i data-lucide="file-text"></i>
+                </div>
+                <div class="qa-content">
+                  <div class="qa-title">Water Quality Report</div>
+                  <div class="qa-desc">pH, TDS, Turbidity, Temperature, Chlorine</div>
+                </div>
+                <i data-lucide="chevron-right" class="qa-arrow"></i>
+              </div>
+              <div class="quick-action-item" onclick="triggerQuickReport('performance')">
+                <div class="qa-icon green-bg">
+                  <i data-lucide="bar-chart-2"></i>
+                </div>
+                <div class="qa-content">
+                  <div class="qa-title">Station Performance Report</div>
+                  <div class="qa-desc">Uptime, Supply, Treatment Efficiency</div>
+                </div>
+                <i data-lucide="chevron-right" class="qa-arrow"></i>
+              </div>
+              <div class="quick-action-item" onclick="triggerQuickReport('alerts')">
+                <div class="qa-icon red-bg">
+                  <i data-lucide="triangle-alert"></i>
+                </div>
+                <div class="qa-content">
+                  <div class="qa-title">Alert Summary Report</div>
+                  <div class="qa-desc">All alerts and actions taken</div>
+                </div>
+                <i data-lucide="chevron-right" class="qa-arrow"></i>
+              </div>
+              <div class="quick-action-item" onclick="triggerQuickReport('district')">
+                <div class="qa-icon purple-bg">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="qa-content">
+                  <div class="qa-title">District-wise Report</div>
+                  <div class="qa-desc">Compare water quality across districts</div>
+                </div>
+                <i data-lucide="chevron-right" class="qa-arrow"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Banner -->
+        <div class="bottom-banner">
+          <div class="banner-left">
+            <div class="banner-icon">
+              <i data-lucide="leaf"></i>
+            </div>
+            <div class="banner-text">
+              <div class="banner-title">Data for a Safer Tomorrow</div>
+              <div class="banner-subtitle">Use reports to identify trends, take action and ensure clean water for every community.</div>
+            </div>
+          </div>
+          <div class="banner-right">
+            <svg class="banner-wave" viewBox="0 0 200 60" preserveAspectRatio="none">
+              <path d="M0,30 Q25,10 50,30 Q75,50 100,30 Q125,10 150,30 Q175,50 200,30 L200,60 L0,60 Z" fill="rgba(99,179,237,0.15)"/>
+              <path d="M0,40 Q30,20 60,40 Q90,60 120,40 Q150,20 180,40 Q195,50 200,45 L200,60 L0,60 Z" fill="rgba(99,179,237,0.1)"/>
+            </svg>
+            <div class="banner-script">Pure Water.<br>Pure Life.</div>
+          </div>
+        </div>
+
+      </div><!-- end reports-body -->
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i data-lucide="check-circle-2"></i>
+    <span id="toast-msg">Report generated successfully!</span>
+  </div>
+
+  <!-- Date Range Picker Modal -->
+  <div class="modal-overlay" id="date-modal">
+    <div class="date-modal">
+      <div class="modal-header">
+        <h3>Select Date Range</h3>
+        <button class="modal-close" id="modal-close"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="date-inputs">
+          <div class="date-field">
+            <label>Start Date</label>
+            <input type="date" value="2026-08-01" id="start-date">
+          </div>
+          <div class="date-field">
+            <label>End Date</label>
+            <input type="date" value="2026-09-02" id="end-date">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" id="modal-cancel">Cancel</button>
+        <button class="btn-apply" id="modal-apply">Apply Range</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="reports.js"></script>
+</body>
+</html>

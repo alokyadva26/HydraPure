@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydraPure - Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+          <div class="logo-text">
+            <span class="brand-name">HydraPure</span>
+            <span class="brand-tagline">PURE WATER, PURE LIFE</span>
+          </div>
+        </a>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <i data-lucide="home"></i> Dashboard
+        </a>
+        <a href="water_stations.html" class="nav-item">
+          <i data-lucide="map-pin"></i> Water Stations
+        </a>
+        <a href="water_quality.html" class="nav-item">
+          <i data-lucide="droplet"></i> Water Quality
+        </a>
+        <a href="alerts.html" class="nav-item">
+          <i data-lucide="triangle-alert"></i> Alerts
+        </a>
+        <a href="reports.html" class="nav-item">
+          <i data-lucide="file-text"></i> Reports
+        </a>
+        <a href="map.html" class="nav-item">
+          <i data-lucide="map"></i> Map
+        </a>
+        <a href="settings.html" class="nav-item">
+          <i data-lucide="settings"></i> Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="illustration-wrapper">
+          <img src="assets/images/sidebar_illustration.jpg" alt="Mountains and Water Illustration">
+        </div>
+        <div class="footer-text">
+          <span class="bold">Clean Water</span>
+          <span class="bold">Stronger Communities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-bar">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" placeholder="Search village, station or district...">
+        </div>
+        <div class="header-right">
+          <button class="notification-btn" aria-label="Notifications">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+          <div class="user-profile">
+            <div class="avatar">AY</div>
+            <div class="user-info">
+              <span class="user-name">Alok Yadav</span>
+              <span class="user-role">Admin</span>
+            </div>
+            <i data-lucide="chevron-down" class="dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-body">
+        
+        <!-- Page Header & Status -->
+        <div class="page-header-container">
+          <div class="page-header">
+            <span class="welcome-text">Welcome Back</span>
+            <h1 class="main-title">Rural Water Safety, <span class="highlight-text">Real Impact</span></h1>
+            <p class="subtitle">Monitor. Treat. Verify. Supply. Alert. Learn.</p>
+          </div>
+          <div class="status-card">
+            <div class="status-date">
+              <i data-lucide="calendar"></i>
+              <div class="date-time">
+                <span class="date">Tue, 2 Sep 2026</span>
+                <span class="time">10:24 AM</span>
+              </div>
+            </div>
+            <div class="system-status">
+              <span class="status-dot green"></span> System Online
+            </div>
+          </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+          <!-- Card 1 -->
+          <div class="stat-card">
+            <div class="stat-icon-wrapper blue">
+              <i data-lucide="network"></i>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Total Stations</span>
+              <span class="stat-value">26</span>
+              <span class="stat-subtext">+2 this month</span>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="stat-card">
+            <div class="stat-icon-wrapper green">
+              <i data-lucide="check-circle-2"></i>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Safe Supply</span>
+              <span class="stat-value">18</span>
+              <span class="stat-subtext">69% of total</span>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="stat-card">
+            <div class="stat-icon-wrapper yellow">
+              <i data-lucide="triangle-alert"></i>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Under Caution</span>
+              <span class="stat-value">5</span>
+              <span class="stat-subtext">19% of total</span>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="stat-card">
+            <div class="stat-icon-wrapper red">
+              <i data-lucide="ban"></i>
+            </div>
+            <div class="stat-details">
+              <span class="stat-label">Supply Blocked</span>
+              <span class="stat-value">3</span>
+              <span class="stat-subtext">12% of total</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Grid for 4 Sections -->
+        <div class="main-grid">
+          
+          <!-- Map Card -->
+          <div class="map-card card-component">
+            <div class="card-header">
+              <div class="card-title-block">
+                <h2>Water Stations Across Jharkhand</h2>
+                <p>Live status of all stations</p>
+              </div>
+              <div class="dropdown-control">
+                <span>All Districts</span> <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+            <div class="map-container">
+              <div class="map-controls">
+                <button><i data-lucide="plus"></i></button>
+                <button><i data-lucide="minus"></i></button>
+              </div>
+              <div class="map-image-wrapper">
+                 <img src="assets/images/dashboard_map.jpg" alt="Jharkhand Map" class="map-img">
+                 <!-- Map markers over the static image -->
+                 <div class="map-marker green" style="top: 40%; left: 35%;"></div>
+                 <div class="map-marker green" style="top: 46%; left: 52%;"></div>
+                 <div class="map-marker red" style="top: 45%; left: 45%;"></div>
+                 <div class="map-marker yellow" style="top: 55%; left: 35%;"></div>
+                 <div class="map-marker green" style="top: 52%; left: 63%;"></div>
+                 <div class="map-marker red" style="top: 56%; left: 42%;"></div>
+                 <div class="map-marker green" style="top: 43%; left: 28%;"></div>
+                 <div class="map-marker green" style="top: 50%; left: 32%;"></div>
+                 <div class="map-marker green" style="top: 48%; left: 60%;"></div>
+              </div>
+              <div class="map-legend">
+                <div class="legend-item"><span class="status-dot green"></span> Safe</div>
+                <div class="legend-item"><span class="status-dot yellow"></span> Caution</div>
+                <div class="legend-item"><span class="status-dot red"></span> Blocked</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alerts Card -->
+          <div class="alerts-card card-component">
+            <div class="card-header border-bottom">
+              <h2>Recent Alerts</h2>
+              <a href="#" class="view-all-link">View All &rarr;</a>
+            </div>
+            <div class="alerts-list">
+              <!-- Alert 1 -->
+              <div class="alert-item alert-red">
+                <div class="alert-icon"><i data-lucide="triangle-alert"></i></div>
+                <div class="alert-content">
+                  <div class="alert-title">High TDS detected &mdash; Baghmara</div>
+                  <div class="alert-desc">Supply blocked automatically</div>
+                </div>
+                <div class="alert-time">10:15 AM</div>
+              </div>
+              <!-- Alert 2 -->
+              <div class="alert-item alert-yellow">
+                <div class="alert-icon"><i data-lucide="triangle-alert"></i></div>
+                <div class="alert-content">
+                  <div class="alert-title">Turbidity above limit &mdash; Katras</div>
+                  <div class="alert-desc">Under caution</div>
+                </div>
+                <div class="alert-time">09:42 AM</div>
+              </div>
+              <!-- Alert 3 -->
+              <div class="alert-item alert-blue">
+                <div class="alert-icon"><i data-lucide="info"></i></div>
+                <div class="alert-content">
+                  <div class="alert-title">System back online &mdash; Govindpur</div>
+                  <div class="alert-desc">Water quality normal</div>
+                </div>
+                <div class="alert-time">08:30 AM</div>
+              </div>
+              <!-- Alert 4 -->
+              <div class="alert-item alert-yellow">
+                <div class="alert-icon"><i data-lucide="triangle-alert"></i></div>
+                <div class="alert-content">
+                  <div class="alert-title">Low pH detected &mdash; Sindri</div>
+                  <div class="alert-desc">Under monitoring</div>
+                </div>
+                <div class="alert-time">07:18 AM</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Overview Table -->
+          <div class="table-card card-component">
+            <div class="card-header">
+              <h2>Stations Overview</h2>
+              <a href="#" class="view-all-link">View All &rarr;</a>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Village / Location</th>
+                    <th>District</th>
+                    <th>Status</th>
+                    <th>Key Parameters</th>
+                    <th>Last Update</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Jharia</td>
+                    <td>Dhanbad</td>
+                    <td><div class="status-cell"><span class="status-dot green"></span> Safe</div></td>
+                    <td>pH 7.2 | TDS 310 | Turb 1.2</td>
+                    <td>10:22 AM</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Govindpur</td>
+                    <td>Dhanbad</td>
+                    <td><div class="status-cell"><span class="status-dot green"></span> Safe</div></td>
+                    <td>pH 7.5 | TDS 290 | Turb 0.8</td>
+                    <td>10:20 AM</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Baghmara</td>
+                    <td>Dhanbad</td>
+                    <td><div class="status-cell"><span class="status-dot red"></span> Blocked</div></td>
+                    <td>pH 5.9 | TDS 1500 | Turb 12.4</td>
+                    <td>10:15 AM</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Katras</td>
+                    <td>Dhanbad</td>
+                    <td><div class="status-cell"><span class="status-dot yellow"></span> Caution</div></td>
+                    <td>pH 6.8 | TDS 820 | Turb 4.5</td>
+                    <td>10:18 AM</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Nirsa</td>
+                    <td>Dhanbad</td>
+                    <td><div class="status-cell"><span class="status-dot green"></span> Safe</div></td>
+                    <td>pH 7.1 | TDS 320 | Turb 1.1</td>
+                    <td>10:19 AM</td>
+                    <td><button class="btn-view">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Chart Card -->
+          <div class="chart-card card-component">
+            <div class="card-header">
+              <h2>Water Quality Trends</h2>
+              <div class="dropdown-control">
+                <span>Jharia</span> <i data-lucide="chevron-down"></i>
+              </div>
+            </div>
+            <div class="chart-container">
+              <canvas id="qualityChart"></canvas>
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item"><span class="chart-dot dark-blue"></span> TDS (x100 ppm)</div>
+              <div class="legend-item"><span class="chart-dot purple"></span> Turbidity (NTU)</div>
+              <div class="legend-item"><span class="chart-dot light-blue"></span> pH</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydraPure - Safe Water For a Healthier Tomorrow</title>
+  <meta name="description" content="HydraPure monitors, analyzes, and helps manage rural water sources to ensure every village has access to safe and healthy drinking water.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Section 1: Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="HydraPure Logo" class="brand-logo">
+        <span class="logo-text">HydraPure</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#get-started" class="btn btn-primary">Get Started &rarr;</a>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Section 2: Hero Section -->
+  <header id="home" class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="subheading">SAFE WATER FOR A HEALTHIER TOMORROW</span>
+        <h1 class="main-heading">Clean Water<br><span class="text-primary">Safer&nbsp;Communities</span><br>Stronger<br>Jharkhand</h1>
+        <div class="hero-actions">
+          <a href="dashboard.html" class="btn btn-primary">Go to Dashboard &rarr;</a>
+          <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="hero-features">
+          <div class="feature-item"><i data-lucide="activity"></i> Real-time Monitoring</div>
+          <div class="feature-item"><i data-lucide="bell-ring"></i> Early Alerts</div>
+          <div class="feature-item"><i data-lucide="bar-chart-2"></i> Data-driven Action</div>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="image-mask">
+          <img src="assets/images/hero.jpg" alt="Smiling child drinking safe water from a hand pump in a rural village" class="hero-img">
+        </div>
+        <div class="badge">
+          <div class="badge-icon-wrapper"><i data-lucide="check-circle-2" class="success-icon"></i></div>
+          <div class="badge-info">
+            <span class="badge-title">Water Quality<br><strong>Safe</strong></span>
+            <span class="badge-details">pH 7.2 | TDS 210 ppm</span>
+          </div>
+        </div>
+        <div class="droplet d-1"></div>
+        <div class="droplet d-2"></div>
+        <div class="droplet d-3"></div>
+        <div class="droplet d-4"></div>
+        <div class="droplet d-5"></div>
+        <div class="vertical-text">
+          <div class="vertical-text-inner">
+            <span class="text-bold">BRIGHTER TOMORROWS</span>
+            <span class="text-light">CLEANER TODAY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(15, 82, 186, 0.1)" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 163, 255, 0.2)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 255, 255, 0.4)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--color-bg-light)" />
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Section 3: Key Metrics Grid -->
+  <section class="metrics" id="about">
+    <div class="container metrics-container">
+      <div class="metric-card">
+        <i data-lucide="users" class="metric-icon"></i>
+        <h2 class="metric-value">2,500+</h2>
+        <p class="metric-title">People Benefited</p>
+        <p class="metric-subtext">Across rural Jharkhand</p>
+      </div>
+      <div class="metric-card">
+        <i data-lucide="map-pin" class="metric-icon"></i>
+        <h2 class="metric-value">120+</h2>
+        <p class="metric-title">Water Stations</p>
+        <p class="metric-subtext">Monitored in real-time</p>
+      </div>
+      <div class="metric-card">
+        <i data-lucide="shield-check" class="metric-icon"></i>
+        <h2 class="metric-value">95%</h2>
+        <p class="metric-title">Early Issue Detection</p>
+        <p class="metric-subtext">For safer communities</p>
+      </div>
+      <div class="metric-card">
+        <i data-lucide="leaf" class="metric-icon"></i>
+        <h2 class="metric-value">100%</h2>
+        <p class="metric-title">Our Commitment</p>
+        <p class="metric-subtext">To clean and safe water</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Features Grid -->
+  <section id="features" class="features bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>A Smarter Way to Ensure Water Safety</h2>
+        <p>From monitoring to alerts, HydraPure provides end-to-end support for safer water management.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="icon-circle"><i data-lucide="search"></i></div>
+          <h3>Real-time<br>Water Monitoring</h3>
+          <p>Track key parameters like pH, TDS, turbidity and more.</p>
+        </div>
+        <div class="feature-box">
+          <div class="icon-circle"><i data-lucide="bell"></i></div>
+          <h3>Instant Alerts</h3>
+          <p>Get notified about unsafe water conditions early.</p>
+        </div>
+        <div class="feature-box">
+          <div class="icon-circle"><i data-lucide="bar-chart"></i></div>
+          <h3>Data-driven Insights</h3>
+          <p>Visualize trends and make informed decisions.</p>
+        </div>
+        <div class="feature-box">
+          <div class="icon-circle"><i data-lucide="map"></i></div>
+          <h3>Village-level Mapping</h3>
+          <p>View all water stations on an interactive map.</p>
+        </div>
+        <div class="feature-box">
+          <div class="icon-circle"><i data-lucide="file-text"></i></div>
+          <h3>Reports & Records</h3>
+          <p>Maintain logs for transparency and action.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Dashboard Showcase -->
+  <section id="dashboard" class="dashboard-showcase">
+    <div class="container dashboard-container">
+      <div class="dashboard-content">
+        <h2>All Your Water Data in One Place</h2>
+        <p>A powerful dashboard to monitor water quality, track station health, view alerts and take action — anytime, anywhere.</p>
+        <a href="#dashboard-app" class="btn btn-primary">Explore Dashboard &rarr;</a>
+      </div>
+      <div class="dashboard-image">
+        <img src="assets/images/dashboard.jpg" alt="HydraPure Data Dashboard Interface" class="mockup-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: How It Works -->
+  <section id="how-it-works" class="how-it-works bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>How It Works</h2>
+        <p>From data to action — a simple and effective process.</p>
+      </div>
+      <div class="workflow-steps">
+        <div class="step">
+          <div class="step-icon">
+            <span class="step-number">1</span>
+            <div class="icon-bubble"><i data-lucide="radio"></i></div>
+          </div>
+          <h3>Monitor</h3>
+          <p>Collect real-time data from water stations.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-icon">
+            <span class="step-number">2</span>
+            <div class="icon-bubble"><i data-lucide="bar-chart-2"></i></div>
+          </div>
+          <h3>Analyze</h3>
+          <p>Evaluate water quality using set standards.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-icon">
+            <span class="step-number">3</span>
+            <div class="icon-bubble"><i data-lucide="alert-circle"></i></div>
+          </div>
+          <h3>Alert</h3>
+          <p>Notify authorities about potential risks.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-icon">
+            <span class="step-number">4</span>
+            <div class="icon-bubble"><i data-lucide="settings"></i></div>
+          </div>
+          <h3>Act</h3>
+          <p>Enable timely intervention and follow-up for safe water supply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Impact Sectors -->
+  <section id="impact" class="impact">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Built for Real Impact</h2>
+        <p>Empowering the people who make change happen.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <i data-lucide="users-2" class="impact-icon"></i>
+          <h3>Communities</h3>
+          <p>Safer and healthier lives.</p>
+        </div>
+        <div class="impact-card">
+          <i data-lucide="landmark" class="impact-icon"></i>
+          <h3>Government</h3>
+          <p>Better monitoring and faster action.</p>
+        </div>
+        <div class="impact-card">
+          <i data-lucide="wrench" class="impact-icon"></i>
+          <h3>Field Teams</h3>
+          <p>Tools to respond efficiently.</p>
+        </div>
+        <div class="impact-card">
+          <i data-lucide="shield" class="impact-icon"></i>
+          <h3>A Cleaner Future</h3>
+          <p>Sustainable water for generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Bottom CTA -->
+  <section id="get-started" class="cta-banner">
+    <div class="container text-center">
+      <h2>Clean Water Today.<br>A Healthier Tomorrow.</h2>
+      <p>Let's build safer, stronger and healthier communities together.</p>
+      <a href="#contact" class="btn btn-glass">Get Started &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Section 9: Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="logo">
+          <i data-lucide="droplet" class="logo-icon text-white"></i>
+          <span class="logo-text text-white">HydraPure</span>
+        </div>
+        <p class="footer-desc">A step towards safe water, healthy communities and a brighter Jharkhand.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="Youtube"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#guide">User Guide</a></li>
+          <li><a href="#docs">Documentation</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col contact-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i data-lucide="mail"></i> <a href="mailto:contact@hydrapure.in">contact@hydrapure.in</a></li>
+          <li><i data-lucide="phone"></i> <a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><i data-lucide="map-pin"></i> Ranchi, Jharkhand, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="copyright">&copy; 2026 HydraPure. All rights reserved.</p>
+      <div class="footer-slogan">Clean Water | Stronger Communities | Brighter Futures</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
